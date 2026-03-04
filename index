@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyler Loving — Aerospace Engineer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+    color: #e6edf7;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(17, 24, 39, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #334155;
+    padding: 15px 0;
+  }
+  nav .nav-inner {
+    max-width: 900px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  nav .name { font-weight: 700; font-size: 1.1em; color: #fff; }
+  nav .links a {
+    color: #999; text-decoration: none; margin-left: 25px;
+    font-size: 0.9em; transition: color 0.2s;
+  }
+  nav .links a:hover { color: #fff; }
+
+  /* HERO */
+  .hero {
+    max-width: 900px; margin: 0 auto; padding: 140px 20px 80px;
+  }
+  .hero h1 {
+    font-size: 3em; font-weight: 700; color: #fff;
+    margin-bottom: 10px; letter-spacing: -1px;
+  }
+  .hero .tagline {
+    font-size: 1.25em; color: #9fb0c8; margin-bottom: 25px;
+  }
+  .hero .links a {
+    color: #7dd3fc; text-decoration: none; margin-right: 20px;
+    font-size: 0.95em;
+  }
+  .hero .links a:hover { text-decoration: underline; }
+
+  /* SECTIONS */
+  section {
+    max-width: 900px; margin: 0 auto; padding: 60px 20px;
+  }
+  section h2 {
+    font-size: 1.6em; color: #f8fafc; margin-bottom: 30px;
+    padding-bottom: 10px; border-bottom: 2px solid #334155;
+  }
+
+  /* PROJECT CARDS */
+  .project-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  @media (max-width: 600px) {
+    .project-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2em; }
+  }
+  .project-card {
+    background: linear-gradient(160deg, #1e293b 0%, #1f2a44 100%);
+    border: 1px solid #334155; border-radius: 10px;
+    overflow: hidden; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .project-card:hover { border-color: #38bdf8; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(56,189,248,0.12); }
+  .project-img {
+    width: 100%; height: 200px; object-fit: cover;
+    background: #273449; display: flex; align-items: center;
+    justify-content: center; color: #94a3b8; font-size: 0.9em;
+  }
+  .project-info { padding: 18px; }
+  .project-info h3 { color: #f8fafc; margin-bottom: 6px; font-size: 1.1em; }
+  .project-info p { color: #bfd0e6; font-size: 0.9em; margin-bottom: 10px; }
+  .tag {
+    display: inline-block; background: #312e81; color: #c7d2fe;
+    padding: 3px 10px; border-radius: 20px; font-size: 0.75em;
+    margin-right: 5px; margin-bottom: 5px;
+  }
+
+  /* ABOUT */
+  .about-content { color: #d1deef; font-size: 1.05em; max-width: 700px; }
+  .about-content p { margin-bottom: 15px; }
+
+  /* EXPERIENCE */
+  .exp-item { margin-bottom: 30px; }
+  .exp-item .exp-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; margin-bottom: 5px;
+  }
+  .exp-item h3 { color: #fff; font-size: 1.05em; }
+  .exp-item .exp-date { color: #9fb0c8; font-size: 0.9em; }
+  .exp-item .exp-company { color: #7dd3fc; font-size: 0.95em; margin-bottom: 5px; }
+  .exp-item p { color: #c0d1e6; font-size: 0.9em; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;
+  }
+  @media (max-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .skill-category h4 { color: #fff; margin-bottom: 8px; font-size: 0.95em; }
+  .skill-category p { color: #bed0e8; font-size: 0.85em; line-height: 1.8; }
+
+  /* CONTACT */
+  .contact-links { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+  .contact-links a {
+    background: #1e293b; border: 1px solid #334155; border-radius: 8px;
+    padding: 12px 24px; color: #e6edf7; text-decoration: none;
+    font-size: 0.95em; transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-links a:hover { border-color: #22d3ee; color: #67e8f9; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 40px 20px; color: #444;
+    font-size: 0.85em; border-top: 1px solid #1a1a1a;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="name">Tyler Loving</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Tyler Loving</h1>
+  <p class="tagline">Aerospace Engineering · University of Washington '28</p>
+  <div class="links">
+    <a href="mailto:tlovin@uw.edu">tlovin@uw.edu</a>
+    <a href="https://linkedin.com/in/tylerjloving/" target="_blank">LinkedIn</a>
+    <a href="resume.pdf" target="_blank" download>Resume PDF ↓</a>
+    <a href="https://docs.google.com/document/d/1PVmxTIR8mMVAOKnxky7ZMTRwZv1F0FFb/edit?usp=sharing" target="_blank">Live Resume (Google Doc)</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About</h2>
+  <div class="about-content">
+    <p>I'm an Aeronautics and Astronautics Engineering student at the University of Washington (Class of 2028, GPA 3.5), focused on aerospace structures, composite manufacturing, and test validation.</p>
+    <p>I currently work with UW Formula Motorsports and Design Build Fly, and I'm an incoming SpaceX Booster Structures Engineering Intern at Starbase.</p>
+  </div>
+
+  <h3 style="color: #fff; margin: 30px 0 15px;">Skills</h3>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h4>Design & Analysis</h4>
+      <p>DFMA<br>GD&T<br>ANSYS (ACP)<br>Classical Laminate Theory<br>SolidWorks<br>Fusion360 CAM<br>MATLAB<br>LaTeX</p>
+    </div>
+    <div class="skill-category">
+      <h4>Manufacturing & Testing</h4>
+      <p>Instron tensile/fatigue/impact testing<br>CFRP manufacturing/repairs<br>CNC mill & lathe<br>MIG welding</p>
+    </div>
+    <div class="skill-category">
+      <h4>General</h4>
+      <p>Technical documentation<br>Design iteration<br>Failure mode analysis<br>Cross-team collaboration</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+
+    <div class="project-card">
+      <div class="project-img">[ Photo here ]</div>
+      <div class="project-info">
+        <h3><a href="uwfm.html" style="color: #fff; text-decoration: none;">T37/T38 Monocoque Chassis — UWFM</a></h3>
+        <p>Responsible Engineer for the monocoque composite chassis on UW Formula Motorsports T38. Designed and validated carbon fiber sandwich panel hardpoints for suspension loads up to 13,500 N.</p>
+        <span class="tag">CFRP Composites</span>
+        <span class="tag">ANSYS ACP</span>
+        <span class="tag">Instron Testing</span>
+        <span class="tag">GD&T</span>
+        <br><br><a href="uwfm.html" style="color: #4a9eff; font-size: 0.9em; text-decoration: none;">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">[ DBF wing/fuselage photo here ]</div>
+      <div class="project-info">
+        <h3><a href="dbf.html" style="color: #fff; text-decoration: none;">Design Build Fly — Wing Structures</a></h3>
+        <p>Designed a monocoque spar-supported wing structure for a 6-ft wingspan carrying 28 lb at 8g using hand calculations and FEA. Owned wing-to-fuselage mount iterations and improved motor mount manufacturability and integration.</p>
+        <span class="tag">FEA</span>
+        <span class="tag">Composite Wings</span>
+        <span class="tag">Structural Design</span>
+        <span class="tag">DFMA</span>
+        <br><br><a href="dbf.html" style="color: #4a9eff; font-size: 0.9em; text-decoration: none;">View Project →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">[ Manufacturing/testing photo here ]</div>
+      <div class="project-info">
+        <h3>Composite Manufacturing & Test Workflow</h3>
+        <p>Built repeatable workflows for CFRP layups, Instron test setup, and non-conformance disposition. Reduced hardpoint manufacturing time by 30% through ply schedule and relief cut optimization.</p>
+        <span class="tag">Instron</span>
+        <span class="tag">Prepreg Layup</span>
+        <span class="tag">Process Optimization</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img">[ SpaceX tooling/mfg photo here ]</div>
+      <div class="project-info">
+        <h3>Booster Structures Manufacturing Tooling (Incoming)</h3>
+        <p>Incoming SpaceX internship project focus: support rate-capable manufacturing for Starship booster medium barrel structures, including weld fixturing, access stations, and production tooling.</p>
+        <span class="tag">Production Tooling</span>
+        <span class="tag">Weld Fixturing</span>
+        <span class="tag">Manufacturing Engineering</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Incoming Booster Structures Engineering Intern (Starship)</h3>
+      <span class="exp-date">Mar 2026 – Jun 2026</span>
+    </div>
+    <div class="exp-company">SpaceX · Starbase, TX</div>
+    <p>Supporting Booster Structures manufacturing development for Starship, with focus on production tooling and process improvements for rate-capable builds.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Chassis Hardpoints Responsible Engineer</h3>
+      <span class="exp-date">Apr 2025 – Current</span>
+    </div>
+    <div class="exp-company">UW Formula Motorsports (FSAE) · Seattle, WA</div>
+    <p>Developed and validated hardpoint designs through ANSYS + physical testing, optimized stiffness/mass targets (~5000 N/mm), and improved manufacturing throughput by 30% via ply and relief-cut process updates.</p>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-header">
+      <h3>Wing Structures Engineer</h3>
+      <span class="exp-date">Sep 2024 – Current</span>
+    </div>
+    <div class="exp-company">Design Build Fly at UW · Seattle, WA</div>
+    <p>Designed monocoque wing structures and wing-fuselage interfaces using hand calcs + FEA, and supported fabrication of composite wing/fuselage components with prepreg layups and CNC-machined hardware.</p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p style="color: #999; margin-bottom: 15px;">Feel free to reach out.</p>
+  <div class="contact-links">
+    <a href="mailto:tlovin@uw.edu">Email</a>
+    <a href="https://linkedin.com/in/tylerjloving/" target="_blank">LinkedIn</a>
+    <a href="tel:4255007616">425-500-7616</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Tyler Loving</p>
+</footer>
+
+</body>
+</html>
