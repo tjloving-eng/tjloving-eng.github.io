@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume — Tyler Loving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Inter, system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, #000124 0%, #000000 100%);
+    color: #ffffff;
+  }
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(0, 1, 36, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #8FB1BE;
+    padding: 15px 0;
+  }
+  .nav-inner {
+    max-width: 980px; margin: 0 auto; padding: 0 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .nav-inner a { color: #8FB1BE; text-decoration: none; }
+  .nav-inner a:hover { color: #F7C560; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 95px 20px 30px; }
+  h1 { font-size: 2rem; margin-bottom: 10px; }
+  .actions { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+  .btn {
+    background: #D53302; color: #F7C560; border: 1px solid #F7C560;
+    text-decoration: none; padding: 10px 14px; border-radius: 8px; font-weight: 600;
+  }
+  .btn.secondary { background: #000124; color: #8FB1BE; border-color: #8FB1BE; }
+  .viewer {
+    width: 100%; height: calc(100vh - 190px);
+    border: 1px solid #8FB1BE; border-radius: 10px;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">← Back to Portfolio</a>
+      <a href="resume.pdf" download>Download PDF</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <h1>Resume</h1>
+    <div class="actions">
+      <a class="btn" href="resume.pdf" download>Download Resume PDF</a>
+      <a class="btn secondary" href="resume.pdf" target="_blank">Open PDF in New Tab</a>
+    </div>
+    <iframe class="viewer" src="resume.pdf" title="Tyler Loving Resume PDF"></iframe>
+  </div>
+</body>
+</html>
